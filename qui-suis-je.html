@@ -22,35 +22,11 @@
         });
     })();
   </script>
-  <script>
-    (function () {
-      const nodes = document.querySelectorAll('section h1, section h2, section h3, section p, section li, section figure, #contactForm .field, #contactForm button');
-      nodes.forEach((el, i) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = ((i % 6) * 60) + 'ms';
-      });
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('reveal-visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
-      document.querySelectorAll('.reveal').forEach(el => {
-        io.observe(el);
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.8) {
-          el.classList.add('reveal-visible');
-          io.unobserve(el);
-        }
-      });
-    })();
-  </script>
+
 
   <section>
     <h1>Qui je suis et comment je travaille</h1>
-    <h2>Je m’appelle Judith Arnaud, j’ai 54 ans et je suis psychothérapeute. Je travaille en français et en anglais.
+    <h2 class="centered">Je m’appelle Judith Arnaud, j’ai 54 ans et je suis psychothérapeute.<br> Je travaille en français et en anglais.
     </h2>
 
     <h3>Ma formation</h3>

@@ -27,28 +27,11 @@
         });
     })();
   </script>
-  <script>
-    (function(){
-      const nodes = document.querySelectorAll('section h2, section h3, section p, section li, section figure, #contactForm .field, #contactForm button');
-      nodes.forEach((el, i) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = ((i % 6) * 60) + 'ms';
-      });
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('reveal-visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    })();
-  </script>
+
   <section>
     <h1>Who I am and how I work</h1>
-    <h2>My name is Judith Arnaud, I am fifty four years old
-      and I am an English and French-speaking counsellor/psychotherapist.</h2>
+    <h2>My name is Judith Arnaud, I am fifty four years old <br>and I am an English and French-speaking counsellor/psychotherapist.</h2>
+
     <h3>My training:</h3>
     <p>
       Initially I completed a double-Masters degree in Criminal Law in France and later I completed a Masters degree in

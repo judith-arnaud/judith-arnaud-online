@@ -28,24 +28,7 @@
         });
     })();
   </script>
-  <script>
-    (function(){
-      const nodes = document.querySelectorAll('section h2, section h3, section p, section li, section figure, #contactForm .field, #contactForm button');
-      nodes.forEach((el, i) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = ((i % 6) * 60) + 'ms';
-      });
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('reveal-visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    })();
-  </script>
+  
   <section>
     <h1>Get in Touch</h1>
     <p>

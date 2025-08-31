@@ -62,7 +62,8 @@ section {
   padding: 20px;
   border-radius: 5px;
   box-shadow: none;
-  margin-bottom: 20px;
+  max-width: 1200px;
+  margin: 0 auto 1em auto;
   text-align: left;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
@@ -75,51 +76,25 @@ section {
   text-transform: none;
 }
 
-/* Reveal-on-scroll animation */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 500ms ease-out, transform 500ms ease-out;
-  will-change: opacity, transform;
-}
-
-.reveal.reveal-visible {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.reveal-visible {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
+/* Reveal-on-scroll animation removed */
 
 section h1 {
-  max-width: 1200px;
-  margin: 0 auto 1em auto;
   font-weight: 300;
+  font-size: 40px;
   text-align: center;
   line-height: 1.6;
 }
 
 section h2 {
-  max-width: 1200px;
-  padding-left: 100px;
-  padding-right: 100px;
   font-weight: 300;
   font-size: 20px;
   font-style: normal;
   text-align: center;
   line-height: 1.6;
+  margin-bottom: 40px;
 }
 
 section h3 {
-  max-width: 1200px;
-  margin: 0 auto 1em auto;
   text-align: left;
   line-height: 1.6;
   font-weight: 100;
@@ -129,8 +104,6 @@ section h3 {
 section p,
 section ul,
 section li {
-  max-width: 1200px;
-  margin: 0 auto 1em auto;
   text-align: left;
   line-height: 1.6;
 }
@@ -146,8 +119,9 @@ footer {
   gap: 20px;
   background: #FBF0E7;
   color: #171865;
+  max-width: 1200px;
+  margin: 0 auto 1em auto;
   padding: 20px;
-  margin-top: 40px;
   border-top: none;
   text-align: center;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
