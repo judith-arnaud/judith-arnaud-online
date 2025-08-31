@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" translate="no">
+
 <head>
   <meta charset="UTF-8">
   <meta name="google" content="notranslate">
@@ -10,7 +11,7 @@
 <body>
   <div id="site-header"></div>
   <script>
-    (function(){
+    (function () {
       const container = document.getElementById('site-header');
       fetch('header.html')
         .then(r => r.text())
@@ -22,8 +23,8 @@
     })();
   </script>
   <script>
-    (function(){
-      const nodes = document.querySelectorAll('section h2, section h3, section p, section li, section figure, #contactForm .field, #contactForm button');
+    (function () {
+      const nodes = document.querySelectorAll('section h1, section h2, section h3, section p, section li, section figure, #contactForm .field, #contactForm button');
       nodes.forEach((el, i) => {
         el.classList.add('reveal');
         el.style.transitionDelay = ((i % 6) * 60) + 'ms';
@@ -35,38 +36,128 @@
             obs.unobserve(e.target);
           }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => {
+        io.observe(el);
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.8) {
+          el.classList.add('reveal-visible');
+          io.unobserve(el);
+        }
+      });
     })();
   </script>
 
   <section>
     <h1>Qui je suis et comment je travaille</h1>
+    <h2>Je m’appelle Judith Arnaud, j’ai 54 ans et je suis psychothérapeute. Je travaille en français et en anglais.
+    </h2>
 
-    <figure style="max-width: 360px; margin: 0 auto 1em auto;">
-      <img src="images/judith.jpeg" alt="Judith Arnaud" style="width:100%; height:auto; display:block; border-radius:6px; object-fit:cover;">
-    </figure>
+    <h3>Ma formation</h3>
+    <p>J’ai d’abord obtenu un double master en droit et politique criminelle en France avant de poursuivre avec un
+      master en psychothérapie clinique en Australie où j’ai vécu et travaillé de nombreuses années comme
+      psychothérapeute. Je me suis également ouverte et formée en art-thérapie et en somato-thérapie à travers une
+      longue collaboration avec Shiri Hergass (art-thérapeute) et Marina Berney (somato-thérapeute) à Sydney, Australie,
+      même si ma pratique reste uniquement basée sur l’échange au travers de la discussion.</p>
 
-    <h3>Parcours</h3>
-    <p>
-      Je suis psychothérapeute, francophone et anglophone. J’accompagne adultes et adolescents, en France et à
-      l’international, principalement en consultations <em>en ligne</em>.
-    </p>
+    <h3>Mon parcours</h3>
 
-    <h3>Approche</h3>
-    <p>
-      Mon approche est intégrative et centrée sur la personne&nbsp;: écoute, alliance thérapeutique et outils
-      concrets. J’utilise des références issues des approches humanistes, des TCC, de l’ACT et de la pleine
-      conscience.
-    </p>
+    <p>J’avais, en Australie, un cabinet privé mais j’ai également beaucoup travaillé pour des organisations
+      caritatives,
+      notamment dans des villages aborigènes auprès d’enfants et de personnels éducatifs, ainsi que dans des centres
+      d’accueil et de soutien pour femmes isolées et/ou victimes de violence familiale.</p>
 
-    <h3>Thématiques travaillées</h3>
+    <p>J’ai ensuite vécu à Berlin où j’ai essentiellement travaillé auprès d’un institut de musique (BIMM) pour un
+      public
+      de jeunes adultes musiciens, en plus de ma pratique privée.</p>
+
+    <p>Depuis maintenant plusieurs années, je me suis installée aux Pays-Bas puis en France, où je poursuis mon activité
+      principalement en ligne avec mes patients, sur plusieurs continents.</p>
+
+    <p>Ma pratique porte essentiellement sur l’anxiété, la dépression, les traumatismes de vie de l’enfance ou de l’âge
+      adulte, ainsi que l’accompagnement dans les différents changements de vie : émigration/expatriation, deuils,
+      séparations, maladies, etc…</p>
+
+    <h3>Pourquoi la thérapie en ligne ?</h3>
+
+    <p>C’est à Berlin que j’ai commencé à travailler plus fréquemment à distance, au départ pour poursuivre le travail
+      thérapeutique commencé avec mes patients australiens ou avec ceux ayant quitté Berlin pour retourner dans leur
+      pays
+      d’origine.</p>
+
+    <p>J’ai ensuite ouvert ma pratique à de nouveaux patients résidant dans des lieux plus isolés, villages ou campagne,
+      où
+      ils n’avaient pas la possibilité d’accéder à une aide psychologique. J’étais hésitante au départ, convaincue de
+      l’importance de la présence physique et réelle dans la thérapie mais j’ai accepté de travailler ainsi, pensant que
+      mieux valait avoir de l’aide, même à distance, que pas d’aide du tout.</p>
+
+    <p>J’ai constaté, avec surprise, que ces modalités non seulement fonctionnaient bien mais soutenaient et aidaient
+      celles et ceux avec qui je travaillais aussi bien que s’ils étaient venus me voir à mon cabinet. Alors j’ai décidé
+      de continuer.</p>
+
+    <p>Je continue de conseiller aux personnes qui ont besoin d’aide, de d’abord chercher autour d’elles si elles ont la
+      possibilité de se faire accompagner en personne par un ou une psychothérapeute, parce que c’est naturel, rassurant
+      et accueillant. Toutefois, je sais maintenant que le travail thérapeutique de soutien et d’accompagnement se fait
+      très bien à distance car il repose sur la confiance et les compétences, peu importe où il prend place.</p>
+
+    <h3>Mon approche thérapeutique</h3>
+
+    <p>A l'origine, et comme de nombreux collègues, en France, je me suis formée à la psychothérapie psychanalytique. Ma
+      pratique m’en a complètement détachée car ce que j’y ai observé alors ne correspondait en rien aux concepts
+      développés par la psychanalyse sur laquelle j’ai aujourd’hui un regard très critique. Je ne peux que recommander à
+      ceux et celles qui s’intéressent aux théories en psychologie et à leur application pratique, la lecture du Livre
+      Noir de la Psychanalyse (ouvrage collectif) qui éclaire, à juste titre, les incohérences et les dérives de cette
+      école de pensée qui a longtemps dominé l’enseignement de la psychologie en France.</p>
+
+    <p>En Australie, j’ai découvert d’autres approches et d’autres écoles, étudiées et validées scientifiquement,
+      auxquelles je me suis formée et que j’ai intégrées à ma pratique parce qu’elles répondaient aux besoins de mes
+      patients en leur donnant les moyens d’aller mieux et d’aller bien.</p>
+
+    <p>Je pourrais citer notamment : </p>
     <ul>
-      <li>Dépression, anxiété, stress</li>
-      <li>Traumatismes, expériences difficiles</li>
-      <li>Transitions de vie (expatriation, deuil, séparation, maladie)</li>
-      <li>Difficultés relationnelles, estime de soi</li>
+      <li>L’approche centrée sur la personne et la relation développée par Carl Rogers et poursuivie par tout le
+        mouvement
+        humaniste du XXème siècle en psychologie.
+      <li>Les outils proposés par les théories cognitivo-comportementales (dites T.C.C.), notamment en français les
+        écrits de
+        Christophe André sur la dépression et l’anxiété, ainsi que ceux de Didier Pleux sur la frustration, ou en
+        anglais
+        les ouvrages de Jon Kabat-Zin, Zindel Segal et Mark Williams.</li>
+      <li>L'approche thérapeutique existentialiste de la seconde moitié du XXème siècle qui fait le lien entre
+        responsabilité
+        et liberté et nous rend la possibilité du choix, théorie développée en particulier par l’école de Irvin Yalom
+        aux
+        Etats-Unis.</li>
+      <li>Egalement, faisant un pont entre les T.C.C. et l’approche existentialiste, la théorie d’acceptation et
+        d’engagement
+        - ACT en anglais.</li>
+      <li>La pratique de la pleine conscience ou “mindfulness” qui peut être un bon instrument pour nous ouvrir au réel
+        et
+        nous apaiser. Là aussi, on peut lire les travaux de Christophe André sur les émotions, les publications de
+        Zindel
+        Segal, Mark Williams ou Jon Kabat-Zin sur l’utilité de ces outils et de cette pratique dans le traitement de la
+        dépression et de l’anxiété.</li>
+      <li>La réflexion thérapeutique psychodynamique que l’on retrouve chez de nombreux auteurs, pour accompagner en
+        permanence le cheminement intérieur de chaque personne.</li>
+      <li>Enfin le champ de connaissances absolument extraordinaire ouvert depuis les années 2000 par les neurosciences
+        et qui
+        ne cesse de s’élargir et de s’approfondir.</li>
     </ul>
+
+    <p>Parmi la multitudes d’articles et d’ouvrages disponibles sur l’ensemble de ces sujets, j’apprécie
+      particulièrement
+      l’approche pédagogique et pratique de Mark Williams qui, comme Christophe André, met à la portée de tous, et pas
+      seulement des professionnels, les théories utiles à implémenter dans nos pratiques et dans nos vies pour changer
+      et
+      aller mieux.</p>
+
+    <p>Enrichie de tous ces champs de connaissance, de réflexion et de compréhension, j’ai aujourd’hui une vision qui
+      prend
+      en compte l'être humain dans sa singularité et dans sa globalité, corps et esprit - et une pratique intégrative
+      dans
+      mon travail - où toutes les ressources possibles sont explorées pour trouver celles qui répondront aux besoins et
+      aux attentes de chacun.</p>
+
   </section>
 
 </body>
