@@ -5,6 +5,28 @@
   <meta charset="UTF-8">
   <title>About Judith Arnaud</title>
   <link rel="stylesheet" href="styles/site.css">
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    label {
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    input, textarea {
+      margin-bottom: 1em;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+    button {
+      padding: 0.5em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -38,6 +60,64 @@
       I offer online sessions, so people who would rather meet online or who don’t have the opportunity to meet in person can access help and therapy nonetheless.
     </p>
   </section>
+  <main class="wrap">
+    <form id="contactForm" action="https://formsubmit.co/ajax/judith.a.arnaud@gmail.com" method="POST" accept-charset="UTF-8">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New contact form message from judith-arnaud-online">
+      <input type="hidden" name="_template" value="table">
+      <!-- Honeypot field for bots -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" id="contactSubmit">Send</button>
+      <p id="form-status" style="display:none; margin-top: 0.5em; color: #2e7d32;">Thank you. Your message has been sent.</p>
+    </form>
+  </main>
+  <!-- On first submission, FormSubmit will email a confirmation to activate sending -->
+  <script>
+    (function() {
+      const form = document.getElementById('contactForm');
+      const button = document.getElementById('contactSubmit');
+      const status = document.getElementById('form-status');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        status.style.display = 'none';
+        const originalText = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Sending…';
+
+        try {
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          });
+          if (!res.ok) throw new Error('Network response was not ok');
+          // Success
+          form.reset();
+          status.textContent = 'Thank you. Your message has been sent.';
+          status.style.color = '#2e7d32';
+          status.style.display = 'block';
+        } catch (err) {
+          status.textContent = 'Sorry, there was a problem sending your message. Please try again later or email directly: judith.a.arnaud@gmail.com';
+          status.style.color = '#c62828';
+          status.style.display = 'block';
+        } finally {
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      });
+    })();
+  </script>
 </body>
 
 <div id="footer"></div>
