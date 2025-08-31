@@ -11,9 +11,21 @@
 <body>
   <div id="site-header"></div>
   <script>
-    fetch("header.html").then(r => r.text()).then(html => {
-      document.getElementById("site-header").innerHTML = html;
-    });
+    (function(){
+      const container = document.getElementById('site-header');
+      fetch('header.html')
+        .then(r => r.text())
+        .then(html => {
+          container.innerHTML = html;
+          const path = location.pathname;
+          let file = path.substring(path.lastIndexOf('/') + 1);
+          if (!file) file = 'index.html';
+          const links = container.querySelectorAll('nav a');
+          links.forEach(a => {
+            if (a.getAttribute('href') === file) a.classList.add('active');
+          });
+        });
+    })();
   </script>
   <section>
     <h1>Get in Touch</h1>
