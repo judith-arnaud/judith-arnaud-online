@@ -9,27 +9,12 @@
 </head>
 
 <body>
-  <header>
-    <h1>Judith-Arnaud-psychotherapy</h1>
-    <nav>
-      <div>
-        <a href="#">English Welcome Page</a>
-        <a href="#">Accueil en français</a>
-      </div>
-      <div>
-        <a href="#" class="active">Who I am and how I work</a>
-        <a href="#">Qui je suis et comment je travaille</a>
-      </div>
-      <div>
-        <a href="#">Sessions</a>
-        <a href="#">Séances</a>
-      </div>
-      <div>
-        <a href="#">Get in Touch</a>
-        <a href="#">Me contacter</a>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script>
+    fetch("header.html").then(r => r.text()).then(html => {
+      document.getElementById("site-header").innerHTML = html;
+    });
+  </script>
   <section>
     <h1>Get in Touch</h1>
     <p>

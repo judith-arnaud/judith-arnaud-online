@@ -2165,6 +2165,21 @@
 
 
       </main>
+      <script>
+        (function(){
+          var existingHeader = document.querySelector('header');
+          if (existingHeader) existingHeader.remove();
+          var container = document.getElementById('site-header');
+          if (!container) {
+            container = document.createElement('div');
+            container.id = 'site-header';
+            document.body.insertBefore(container, document.body.firstChild);
+          }
+          fetch('header.html')
+            .then(function(r){ return r.text(); })
+            .then(function(html){ container.innerHTML = html; });
+        })();
+      </script>
 
         
 
